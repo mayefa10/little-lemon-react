@@ -3,18 +3,20 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
 import Header from './components/Header.jsx';
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter,  RouterProvider } from 'react-router-dom';
 import Footer from './components/Footer.jsx';
 import Hero from './components/Hero.jsx';
 import Highlights from './pages/Highlights.jsx';
-import Testimonials from './pages/Testimonials.jsx';
-import About from './pages/About.jsx';
 
-const Layout = () => {
+import About from './pages/About.jsx';
+import Testimonials from './components/Testimonials.jsx';
+import Home from './pages/Home.jsx';
+
+export const Layout = () => {
   return (
     <div>
       <Header />
-      <Outlet />
+      <Home/>
       <Footer/>
     </div>
   );
