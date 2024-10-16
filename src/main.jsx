@@ -3,20 +3,19 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
 import Header from './components/Header.jsx';
-import { createBrowserRouter,  RouterProvider } from 'react-router-dom';
+import { createBrowserRouter,  Outlet,  RouterProvider } from 'react-router-dom';
 import Footer from './components/Footer.jsx';
-import Hero from './components/Hero.jsx';
-import Highlights from './pages/Highlights.jsx';
-
 import About from './pages/About.jsx';
-import Testimonials from './components/Testimonials.jsx';
-import Home from './pages/Home.jsx';
+import Menu from './pages/Menu.jsx';
+import BookingPAge from './components/BookingPage.jsx';
+import Login from './pages/Login.jsx';
+import Specials from './components/Specials.jsx';
 
 export const Layout = () => {
   return (
     <div>
       <Header />
-      <Home/>
+      <Outlet/>
       <Footer/>
     </div>
   );
@@ -31,20 +30,28 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
-        path: '/hero',
-        element: <Hero/>,
+        path: '/about',
+        element: <About />,
       },
       {
-        path: '/highlights',
-        element: <Highlights />,
+        path: '/menu',
+        element: <Menu />,
       },
       {
-        path: '/testimonials',
-        element: <Testimonials />,
+        path: '/reservations',
+        element: <BookingPAge />,
       },
       {
         path: '/about',
         element: <About />,
+      },
+      {
+        path: '/specials',
+        element: <Specials />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
       },
     ],
   },
